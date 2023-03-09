@@ -2,9 +2,9 @@ import { useState } from "react";
 
 export const Formulario = () => {
   const [name, setName] = useState("");
-  const [lastname, setLastname] = useState("");
+  const [password, setPassword] = useState("");
   const [validateName, setValidateName] = useState(true);
-  const [validateLastname, setValidateLastname] = useState(true);
+  const [validatePassword, setValidateLastname] = useState(true);
 
   const cambiarNombre = (e) => {
     if (e.target.value.length > 3) {
@@ -19,9 +19,9 @@ export const Formulario = () => {
   
   const cambiarApellido = (e) => {
     if (e.target.value.length > 6) {
-      setLastname(e.target.value);
+      setPassword(e.target.value);
     } else {      
-      setLastname(e.target.value);
+      setPassword(e.target.value);
     }
   };
 
@@ -29,7 +29,7 @@ export const Formulario = () => {
     e.preventDefault();
     const datos = {
       name,
-      lastname
+      password
     }
     console.log(datos.name)
     console.log(datos.lastname)
@@ -46,10 +46,10 @@ export const Formulario = () => {
       console.log("Debe tener más de 6 carácteres")
     }
 
-    if(validateName && validateLastname){
+    if(validateName && validatePassword){
       alert(`Bienvenido: ${name}`)
     }else{
-      alert("Alguno de los datos ingresados no son correctos")
+      alert("Algunos de los datos ingresados no son correctos")
     }
   };
   
@@ -68,10 +68,11 @@ export const Formulario = () => {
       <input
         id="apellido"
         name="apellido"
-        value={lastname}
+        value={password}
         placeholder="Ingrese el apellido"
         onChange={cambiarApellido}
         />
+
       <button onSubmit={enviar}>Enviar</button>
       
         </form>

@@ -1,11 +1,13 @@
 
 import React from "react";
 
-function Tittle(){
+function Tittle(props){
 
     return(      
         <div>
-            <h1>Formulario</h1>
+            <br/><br/>
+            <h1>{props.titulo}</h1>
+            <br/>
         </div>
     );
 }
